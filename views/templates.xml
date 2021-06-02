@@ -1,0 +1,10 @@
+<odoo>
+
+    <template id="index">
+        <title>Shorepoint</title>
+        <t t-foreach="employees" t-as="employee">
+            <p><t t-esc="employee"/></p>
+        </t>
+    </template>
+
+</odoo>
