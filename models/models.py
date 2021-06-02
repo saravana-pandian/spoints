@@ -4,3 +4,4 @@ class Employees(models.Model):
     _name = 'spoints.employees'
 
     name = fields.Char()
+    biography = fields.Html()
