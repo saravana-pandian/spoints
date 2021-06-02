@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_spoints_spoints,spoints.spoints,model_spoints_spoints,base.group_user,1,1,1,1
+access_spoints_employees,access.spoints.employees,model_spoints_employees,,1,1,1,1
