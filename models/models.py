@@ -5,3 +5,11 @@ class Employees(models.Model):
 
     name = fields.Char()
     biography = fields.Html()
+    works_ids = fields.One2many('spoints.works', 'employee_id', string="Works")
+
+class Works(models.Model):
+    _name = 'spoints.works'
+
+    name = fields.Char()
+    employee_id = fields.Many2one('spoints.employees', string="Employee")
+
