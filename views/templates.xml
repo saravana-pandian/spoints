@@ -3,8 +3,8 @@
     <template id="index">
         <title>Shorepoint</title>
         <t t-foreach="employees" t-as="employee">
-            <p><t t-esc="employee"/></p>
-        </t>
+             <p><t t-esc="employee.id"/> <t t-esc="employee.name"/></p>
+         </t>
     </template>
 
 </odoo>

@@ -4,6 +4,7 @@ class Spoints(http.Controller):
 
     @http.route('/spoints/spoints/', auth='public')
     def index(self, **kw):
+        Employees = http.request.env['spoints.employees']
         return http.request.render('spoints.index', {
-            'employees': ["Employee 1", "Employee 2", "Employee 3"],
+        	'employees': Employees.search([])
         })
