@@ -2,7 +2,7 @@ from odoo import http
 
 class Spoints(http.Controller):
 
-    @http.route('/spoints/spoints/', auth='public')
+    @http.route('/spoints/spoints/', auth='public', website=True)
     def index(self, **kw):
         Employees = http.request.env['spoints.employees']
         return http.request.render('spoints.index', {
