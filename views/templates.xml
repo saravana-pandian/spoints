@@ -5,12 +5,27 @@
             <t t-set="title">Shorepoint</t>
             <div class="oe_structure">
                 <div class="container">
-                    <t t-foreach="employees" t-as="employee">
-                        <p><t t-esc="employee.id"/> <t t-esc="employee.name"/></p>
-                    </t>
+                     <t t-foreach="employees" t-as="employee">
+                    <p>
+                        <a t-attf-href="/spoints/{{ slug(employee) }}">
+                        <t t-esc="employee.name"/></a>
+                    </p>
+                </t>
                 </div>
             </div>
         </t>
     </template>
+    <template id="biography">
+    <t t-call="website.layout">
+        <t t-set="title">Spoint emps</t>
+        <div class="oe_structure"/>
+        <div class="oe_structure">
+            <div class="container">
+                <h3><t t-esc="person.name"/></h3>
+            </div>
+        </div>
+        <div class="oe_structure"/>
+    </t>
+</template>
 
 </odoo>

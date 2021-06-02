@@ -8,3 +8,8 @@ class Spoints(http.Controller):
         return http.request.render('spoints.index', {
         	'employees': Employees.search([])
         })
+    @http.route('/spoints/<model("spoints.employees"):employee>/', auth='public', website=True)
+    def employee(self, employee):
+    	return http.request.render('spoints.biography', {
+    		'person': employee
+    	})
