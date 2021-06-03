@@ -9,6 +9,7 @@ class Employees(models.Model):
 
 class Works(models.Model):
     _name = 'spoints.works'
+    _inherit = 'mail.thread'
 
     name = fields.Char()
     employee_id = fields.Many2one('spoints.employees', string="Employee")

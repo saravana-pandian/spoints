@@ -28,7 +28,7 @@
     </field>
 </record>
 
-<record id="spoints_course_form" model="ir.ui.view">
+<record id="spoints_works_form" model="ir.ui.view">
     <field name="name">Spoints Works: form</field>
     <field name="model">spoints.works</field>
     <field name="arch" type="xml">
@@ -37,11 +37,15 @@
                 <field name="name"/>
                 <field name="employee_id"/>
             </sheet>
+            <div class="oe_chatter">
+                <field name="message_follower_ids" widget="mail_followers"/>
+                <field name="message_ids" widget="mail_thread"/>
+            </div>
         </form>
     </field>
 </record>
 
-<record id="spoints_course_search" model="ir.ui.view">
+<record id="spoints_works_search" model="ir.ui.view">
     <field name="name">Spoints Works Search</field>
     <field name="model">spoints.works</field>
     <field name="arch" type="xml">
@@ -51,7 +55,7 @@
         </search>
     </field>
 </record>
-<record id="spoints_course_list" model="ir.ui.view">
+<record id="spoints_works_list" model="ir.ui.view">
     <field name="name">Spoints Works: list</field>
     <field name="model">spoints.works</field>
     <field name="arch" type="xml">
