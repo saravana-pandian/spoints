@@ -9,5 +9,30 @@
     <record id="e3" model="spoints.employees">
         <field name="name">Saravana3</field>
     </record>
-
+<!--
+    <record id="works0" model="product.template">
+    <field name="name">works 0</field>
+    <field name="employee_id" ref="e1"/>
+    <field name="public_categ_ids" eval="[(4, ref('spoints.category.works'), False)]"/>
+    <field name="website_published">True</field>
+    <field name="list_price" type="float">0</field>
+    <field name="type">service</field>
+</record>
+<record id="works1" model="product.template">
+    <field name="name">works 1</field>
+    <field name="employee_id" ref="e2"/>
+    <field name="public_categ_ids" eval="[(4, ref('spoints.category.works'), False)]"/>
+    <field name="website_published">True</field>
+    <field name="list_price" type="float">0</field>
+    <field name="type">service</field>
+</record>
+<record id="works2" model="product.template">
+    <field name="name">works 2</field>
+    <field name="employee_id" ref="e3"/>
+    <field name="public_categ_ids" eval="[(4, ref('spoints.category.works'), False)]"/>
+    <field name="website_published">True</field>
+    <field name="list_price" type="float">0</field>
+    <field name="type">service</field>
+</record>
+-->
 </odoo>
