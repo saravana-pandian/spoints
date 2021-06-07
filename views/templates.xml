@@ -6,16 +6,37 @@
             <div class="oe_structure">
                 <div class="container">
                     <h3>LiST OF EMPLOYEES</h3>
-                    <t t-foreach="employees" t-as="employee">
-                    <p>
-                        <a t-attf-href="/spoints/{{ slug(employee) }}">
-                        <t t-esc="employee.name"/></a>
-                    </p>
-                </t>
+                    <div class="updatedlistdesign">
+                    <main>
+  <ol class="gradient-list">
+
+        <t t-foreach="employees" t-as="employee">
+             <p><li>
+                    <a t-attf-href="/spoints/{{ slug(employee) }}">
+                    <t t-esc="employee.name"/></a>
+             </li></p>
+         </t>
+
+  </ol>
+</main>
+</div>
                 </div>
             </div>
         </t>
     </template>
+
+
+
+
+
+
+
+
+
+
+
+
+
     <template id="biography">
     <t t-call="website.layout">
         <t t-set="title">Spoint emps</t>
