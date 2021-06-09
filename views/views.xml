@@ -1,60 +1,81 @@
 <odoo>
-  <data>
-    <!-- explicit list view definition -->
-<!--
-    <record model="ir.ui.view" id="spoints.list">
-      <field name="name">spoints list</field>
-      <field name="model">spoints.spoints</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
+    <record id="action_spoints_employees" model="ir.actions.act_window">
+        <field name="name">Spoints Employees</field>
+        <field name="res_model">spoints.employees</field>
+    </record>
+    <record id="action_spoints_works" model="ir.actions.act_window">
+        <field name="name">spoints works</field>
+        <field name="res_model">spoints.works</field>
+    </record>
+    
+
+
+    <record id="spoints_employees_form" model="ir.ui.view">
+    <field name="name">Spoints Employees Form</field>
+    <field name="model">spoints.employees</field>
+    <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <field name="name"/>
+                <field name="biography"/>
+                <field name="works_ids">
+                    <tree string="Works" editable="bottom">
+                        <field name="name"/>
+                    </tree>
+                </field>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+<record id="spoints_works_form" model="ir.ui.view">
+    <field name="name">Spoints Works: form</field>
+    <field name="model">spoints.works</field>
+    <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <field name="name"/>
+                <field name="employee_id"/>
+            </sheet>
+            <div class="oe_chatter">
+                <field name="message_follower_ids" widget="mail_followers"/>
+                <field name="message_ids" widget="mail_thread"/>
+            </div>
+        </form>
+    </field>
+</record>
+
+<record id="spoints_works_search" model="ir.ui.view">
+    <field name="name">Spoints Works Search</field>
+    <field name="model">spoints.works</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="name"/>
+            <field name="employee_id"/>
+        </search>
+    </field>
+</record>
+<record id="spoints_works_list" model="ir.ui.view">
+    <field name="name">Spoints Works: list</field>
+    <field name="model">spoints.works</field>
+    <field name="arch" type="xml">
+        <tree string="works">
+            <field name="name"/>
+            <field name="employee_id"/>
         </tree>
-      </field>
-    </record>
--->
+    </field>
+</record>
 
-    <!-- actions opening views on models -->
-<!--
-    <record model="ir.actions.act_window" id="spoints.action_window">
-      <field name="name">spoints window</field>
-      <field name="res_model">spoints.spoints</field>
-      <field name="view_mode">tree,form</field>
-    </record>
--->
 
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="spoints.action_server">
-      <field name="name">spoints server</field>
-      <field name="model_id" ref="model_spoints_spoints"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
--->
-
-    <!-- Top menu item -->
-<!--
-    <menuitem name="spoints" id="spoints.menu_root"/>
--->
-    <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="spoints.menu_1" parent="spoints.menu_root"/>
-    <menuitem name="Menu 2" id="spoints.menu_2" parent="spoints.menu_root"/>
--->
-    <!-- actions -->
-<!--
-    <menuitem name="List" id="spoints.menu_1_list" parent="spoints.menu_1"
-              action="spoints.action_window"/>
-    <menuitem name="Server to list" id="spoints" parent="spoints.menu_2"
-              action="spoints.action_server"/>
--->
-  </data>
+    <menuitem sequence="0" id="menu_spoints" name="Shorepoint"/>
+    <menuitem id="menu_spoints_content" parent="menu_spoints"
+                name="Spoints Thing"/>
+    <menuitem id="menu_spoints_content_employee"
+                parent="menu_spoints_content"
+                name="Employees"
+                action="action_spoints_employees"/>
+    <menuitem id="menu_action_spoints_works"
+                parent="menu_spoints_content"
+                name="Works"
+                action="action_spoints_works"/>
 </odoo>
